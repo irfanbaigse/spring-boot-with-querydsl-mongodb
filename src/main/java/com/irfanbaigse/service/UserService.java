@@ -1,11 +1,10 @@
 package com.irfanbaigse.service;
 
-/**
- * @author Baig
- * 2021-04-26 at 12:42 AM
- * <p>
- * Copyright @ 2021 Seera. All rights reserved.
- * @see <a href="https://www.seera.sa">https://www.seera.sa</a>
- */
+import com.irfanbaigse.repository.entity.User;
+import com.querydsl.core.types.Predicate;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 public interface UserService {
+    Page<User> getAllUsers(Pageable pageable, Predicate predicate);
 }
