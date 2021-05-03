@@ -1,6 +1,7 @@
 package com.irfanbaigse.repository.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.irfanbaigse.repository.UserTypeE;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
@@ -16,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Transient;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Document(collection = "user")
@@ -29,6 +31,12 @@ public class User {
     private String fullName;
 
     private Boolean active;
+
+    private UserTypeE type;
+
+    private List<Integer> cities;
+
+    private LocalDateTime registerDate;
 
     @Field(name = "created_at")
     @CreatedDate
